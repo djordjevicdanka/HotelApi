@@ -15,7 +15,7 @@ public interface GuestRepository extends JpaRepository<Guest, Integer> {
     List<GuestResponse> findAllGuests();
 
 
-    @Query("SELECT new com.example.guestrecordsapi.dto.GuestResponse(h.name, g.guest_id, g.name, g.surname, g.phone) FROM Guest g JOIN g.hotel h WHERE guest_id=2")
+    @Query("SELECT new com.example.guestrecordsapi.dto.GuestResponse(h.name, g.guest_id, g.name, g.surname, g.phone) FROM Guest g JOIN g.hotel h where guest_id=1")
 
     List<GuestResponse> findGuestById();
 

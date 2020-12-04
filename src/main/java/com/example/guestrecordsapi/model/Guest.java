@@ -1,14 +1,9 @@
 package com.example.guestrecordsapi.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @IdClass(Guest.class)
 @Table(name = "guest")
@@ -27,6 +22,40 @@ public class Guest implements Serializable {
 
     @Column(name = "phone")
     private String phone;
+
+    public Guest(){};
+
+    public int getGuest_id() {
+        return guest_id;
+    }
+
+    public void setGuest_id(int guest_id) {
+        this.guest_id = guest_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     @JsonManagedReference
     @Id
